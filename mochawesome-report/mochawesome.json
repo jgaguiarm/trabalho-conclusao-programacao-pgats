@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-21T23:40:07.175Z",
+    "end": "2026-06-21T23:40:07.179Z",
+    "duration": 4,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ad4eeff5-8068-41f4-b3d0-dce1d80b585b",
+      "title": "",
+      "fullFile": "/home/jroot/Documents/Pós-Graduação em Testes de Software - Julio de Lima/Programação para Automação de Testes/projects/trabalho-conclusao-programacao-pgats/test/servicoDePagamento.test.js",
+      "file": "/test/servicoDePagamento.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3605154f-9fa7-4977-b2a2-38b8339ff77d",
+          "title": "Classe de Serviço de Pagamento",
+          "fullFile": "/home/jroot/Documents/Pós-Graduação em Testes de Software - Julio de Lima/Programação para Automação de Testes/projects/trabalho-conclusao-programacao-pgats/test/servicoDePagamento.test.js",
+          "file": "/test/servicoDePagamento.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve retornar a categoria \"padrão\" se o valor do pagamento for menor que 100.00",
+              "fullTitle": "Classe de Serviço de Pagamento Deve retornar a categoria \"padrão\" se o valor do pagamento for menor que 100.00",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\n        const servicoDePagamento = new ServicoDePagamento();\n        // Act\n        servicoDePagamento.realizarPagamento('212-3546-798', 'Internet', 99.99);\n        const pagamento = servicoDePagamento.consultarPagamento();\n        // Assert\n        assert.equal(pagamento.codigoDeBarras, '212-3546-798');\n        assert.equal(pagamento.categoria, 'padrão');",
+              "err": {},
+              "uuid": "5b22dbb0-a074-417a-8d6d-936bca251320",
+              "parentUUID": "3605154f-9fa7-4977-b2a2-38b8339ff77d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve retornar a categoria \"cara\" se o valor do pagamento for maior que 100.00",
+              "fullTitle": "Classe de Serviço de Pagamento Deve retornar a categoria \"cara\" se o valor do pagamento for maior que 100.00",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\n        const servicoDePagamento = new ServicoDePagamento();\n        // Act\n        servicoDePagamento.realizarPagamento('123-4567-890', 'Centerplex', 100.01);\n        const pagamento = servicoDePagamento.consultarPagamento();\n        // Assert\n        assert.equal(pagamento.codigoDeBarras, '123-4567-890');\n        assert.equal(pagamento.categoria, 'cara');",
+              "err": {},
+              "uuid": "11cc7ca9-6859-43ed-b627-3113505593b4",
+              "parentUUID": "3605154f-9fa7-4977-b2a2-38b8339ff77d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve retornar o último pagamento realizado",
+              "fullTitle": "Classe de Serviço de Pagamento Deve retornar o último pagamento realizado",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.realizarPagamento('098-7654-321', 'Casas Bahia', 2590.98);\n\n// Act\nconst ultimoPagamento = servicoDePagamento.consultarPagamento();\n// Assert\nassert.equal(ultimoPagamento.codigoDeBarras, '098-7654-321');\nassert.equal(ultimoPagamento.empresa, 'Casas Bahia');\nassert.equal(ultimoPagamento.valor, 2590.98);\nassert.equal(ultimoPagamento.categoria, 'cara');",
+              "err": {},
+              "uuid": "a9058ff0-aa13-4df4-b012-94aae95ecbf9",
+              "parentUUID": "3605154f-9fa7-4977-b2a2-38b8339ff77d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5b22dbb0-a074-417a-8d6d-936bca251320",
+            "11cc7ca9-6859-43ed-b627-3113505593b4",
+            "a9058ff0-aa13-4df4-b012-94aae95ecbf9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.6"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
