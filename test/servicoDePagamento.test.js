@@ -38,7 +38,7 @@ describe('Classe de Serviço de Pagamento', () => {
         servicoDePagamento.realizarPagamento('098-7654-321', 'Casas Bahia', 2590.98);
         
         // Act
-        const ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();
+        const ultimoPagamento = servicoDePagamento.consultarPagamento();
 
         // Assert
         assert.equal(ultimoPagamento.codigoDeBarras, '098-7654-321');
