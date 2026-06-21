@@ -1,0 +1,39 @@
+# CI de Nível 1 - Disparo Manual através de clique
+
+# Nome da Pipeline
+name: 'CI de Nível 1 - Disparo Manual através de clique'
+
+# Gatilhos/Triggers - Regras de Disparo
+# Gatilho Manual
+on: 
+    workflow_dispatch:
+      
+
+#Tarefas dentro da Pipeline
+jobs:
+    #Nome do Job
+    unit-tests:
+        # Máquina onde os testes irão rodar
+        runs-on: ubuntu-latest
+
+        # Passos do job
+        steps:
+          # Clone do Projeto
+          - uses: actions/checkout@v4
+
+          # Instalação do Node
+          - uses: action/setup-node@v4
+            with:
+              node-verson: 24.x
+
+          # Instalação do Mocha
+          - name: Instalando o Mocha
+            run: npm i mocha
+
+          # Executar os testes unitários
+          - name: Executando os testes unitátios
+            run: npx mocha
+          
+
+
+
