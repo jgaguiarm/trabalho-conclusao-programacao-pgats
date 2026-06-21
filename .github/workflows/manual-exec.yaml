@@ -24,7 +24,7 @@ jobs:
           # Instalação do Node
           - uses: actions/setup-node@v4
             with:
-              node-verson: 24.x
+              node-version: 24.x
 
           # Instalação do Mocha
           - name: Instalando o Mocha
